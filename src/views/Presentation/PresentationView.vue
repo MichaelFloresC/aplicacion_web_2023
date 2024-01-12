@@ -18,8 +18,10 @@ import data from "./Sections/Data/designBlocksData";
 import BuiltByDevelopers from "./Components/BuiltByDevelopers.vue";
 import PresentationTestimonials from "./Sections/PresentationTestimonials.vue";
 import PresentationInformation from "./Sections/PresentationInformation.vue";
+import Posts from "../LandingPages/Author/Sections/AuthorPosts.vue";
 
 //images
+import presentBanner from "@/assets/img/present_banner.jpg";
 import vueMkHeader from "@/assets/img/vue-mk-header.jpg";
 import wavesWhite from "@/assets/img/waves-white.svg";
 import logoBootstrap from "@/assets/img/logos/bootstrap5.jpg";
@@ -52,21 +54,20 @@ onUnmounted(() => {
   <Header>
     <div
       class="page-header min-vh-75"
-      :style="`background-image: url(${vueMkHeader})`"
+      :style="`background-image: url(${presentBanner})`"
       loading="lazy"
     >
       <div class="container">
         <div class="row">
           <div class="col-lg-7 text-center mx-auto position-relative">
             <h1
-              class="text-white pt-3 mt-n5 me-2"
+              class="text-black pt-3 mt-n5 me-2"
               :style="{ display: 'inline-block ' }"
             >
-              Material Kit 2
+              MISTI TOURS
             </h1>
-            <p class="lead text-white px-5 mt-3" :style="{ fontWeight: '500' }">
-              Start the Development With Bootstrap 5 Design System inspired by
-              Material Design.
+            <p class="lead text-black px-5 mt-3" :style="{ fontWeight: '500' }">
+              Comienza nuevas aventuras con todo preparado para ti
             </p>
           </div>
         </div>
@@ -76,6 +77,7 @@ onUnmounted(() => {
 
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
     <PresentationCounter />
+    <Posts />
     <PresentationInformation />
     <PresentationExample :data="data" />
     <PresentationPages />
