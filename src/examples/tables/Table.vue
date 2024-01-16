@@ -90,6 +90,7 @@ defineProps({
                       }}</span>
                     </td>
                     <td class="align-middle text-center">
+                      <!--
                       <a
                         :href="route"
                         class="text-secondary font-weight-bold text-sm "
@@ -98,6 +99,15 @@ defineProps({
                       >
                         {{ label }}
                       </a>
+-->
+                      <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;">
+                        <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar 
+                      </a>
+
+                      <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;">
+                        <i class="far fa-trash-alt me-2" aria-hidden="true">
+                      </i>Delete 
+                    </a>
                     </td>
                   </tr>
                 </tbody>
