@@ -25,10 +25,10 @@ defineProps({
 });
 </script>
 <template>
-  <section class="pt-5 mt-5">
-    <div class="container">
+  <section class="pt-2 mt-2">
+    <div style="margin: 80px">
       <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-lg-12">
           <div class="card">
             <div class="table-responsive">
               <table class="table align-items-center mb-0">
@@ -37,7 +37,7 @@ defineProps({
                     <th
                       v-for="(header, index) in headers"
                       :key="header"
-                      class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                      class="text-uppercase text-dark text-center font-weight-bolder opacity-10"
                       :class="{ 'ps-2': index == 1, 'text-center': index > 1 }"
                     >
                       {{ header }}
@@ -66,7 +66,7 @@ defineProps({
                           <img :src="image" class="avatar avatar-sm me-3" />
                         </div>
                         <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-xs">{{ name }}</h6>
+                          <h6 class="mb-0 text-sm">{{ name }}</h6>
                           <p class="text-xs text-secondary mb-0">
                             {{ email }}
                           </p>
@@ -74,25 +74,25 @@ defineProps({
                       </div>
                     </td>
                     <td>
-                      <p class="text-xs font-weight-bold mb-0">{{ label1 }}</p>
-                      <p class="text-xs text-secondary mb-0">{{ label2 }}</p>
+                      <p class="text-sm font-weight-bold mb-0">{{ label1 }}</p>
+                      <p class="text-sm text-secondary mb-0">{{ label2 }}</p>
                     </td>
                     <td class="align-middle text-center text-sm">
                       <span
-                        class="badge badge-sm"
-                        :class="status ? 'badge-success' : 'badge-secondary'"
-                        >{{ status ? "Online" : "Offline" }}</span
+                        class="text-sm"
+                        :class="status ? 'badge-dark' : 'badge-danger'"
+                        >{{ status ? "ONLINE" : "OFFLINE" }}</span
                       >
                     </td>
                     <td class="align-middle text-center">
-                      <span class="text-secondary text-xs font-weight-bold">{{
+                      <span class="text-secondary text-sm font-weight-bold">{{
                         date
                       }}</span>
                     </td>
                     <td class="align-middle text-center">
                       <a
                         :href="route"
-                        class="text-secondary font-weight-bold text-xs"
+                        class="text-secondary font-weight-bold text-sm "
                         data-toggle="tooltip"
                         data-original-title="Edit user"
                       >

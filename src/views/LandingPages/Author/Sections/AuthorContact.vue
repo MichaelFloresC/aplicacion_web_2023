@@ -38,17 +38,17 @@ onMounted(() => {
                   <div
                     class="p-5 ps-sm-8 position-relative text-start my-auto z-index-2"
                   >
-                    <h3 class="text-white">Contact Information</h3>
+                    <h3 class="text-white">Información del contacto</h3>
                     <p class="text-white opacity-8 mb-4">
-                      Fill up the form and our Team will get back to you within
-                      24 hours.
+                      Complete el formulario y nuestro equipo se comunicará con usted dentro de
+                      24 horas.
                     </p>
                     <div class="d-flex p-2 text-white">
                       <div>
                         <i class="fas fa-phone text-sm"></i>
                       </div>
                       <div class="ps-3">
-                        <span class="text-sm opacity-8">(+40) 772 100 200</span>
+                        <span class="text-sm opacity-8">(+54) 698421</span>
                       </div>
                     </div>
                     <div class="d-flex p-2 text-white">
@@ -57,7 +57,7 @@ onMounted(() => {
                       </div>
                       <div class="ps-3">
                         <span class="text-sm opacity-8"
-                          >hello@creative-tim.com</span
+                          >mistitours@gmail.com</span
                         >
                       </div>
                     </div>
@@ -67,7 +67,7 @@ onMounted(() => {
                       </div>
                       <div class="ps-3">
                         <span class="text-sm opacity-8"
-                          >Dyonisie Wolf Bucharest, RO 010458</span
+                          >Santa Catalina, Cercado #1005</span
                         >
                       </div>
                     </div>
@@ -119,33 +119,33 @@ onMounted(() => {
               <div class="col-lg-7">
                 <form class="p-3" id="contact-form" method="post">
                   <div class="card-header px-4 py-sm-5 py-3">
-                    <h2>Say Hi!</h2>
-                    <p class="lead">We'd like to talk with you.</p>
+                    <h2>¡Di hola!</h2>
+                    <p class="lead">Nos gustaría hablar con usted.</p>
                   </div>
                   <div class="card-body pt-1">
                     <div class="row">
                       <div class="col-md-12 pe-2 mb-3">
                         <MaterialInput
                           class="input-group-static mb-4"
-                          label="My name is"
+                          label="Mi nombre es"
                           type="text"
-                          placeholder="Full Name"
+                          placeholder="Nombre completo"
                         />
                       </div>
                       <div class="col-md-12 pe-2 mb-3">
                         <MaterialInput
                           class="input-group-static mb-4"
-                          label="I'm looking for"
+                          label="Estoy buscando"
                           type="text"
-                          placeholder="What you love"
+                          placeholder="A donde deseas viajar"
                         />
                       </div>
                       <div class="col-md-12 pe-2 mb-3">
                         <MaterialTextArea
                           class="input-group-static mb-4"
-                          placeholder="I want to say that..."
+                          placeholder="Quiero incluir en mi viaje..."
                           :rows="6"
-                          >Your message</MaterialTextArea
+                          >tu mensaje</MaterialTextArea
                         >
                       </div>
                     </div>
@@ -156,7 +156,7 @@ onMounted(() => {
                           color="success"
                           type="submit"
                           class="mb-0"
-                          >Send Message</MaterialButton
+                          >Enviar Mensaje</MaterialButton
                         >
                       </div>
                     </div>

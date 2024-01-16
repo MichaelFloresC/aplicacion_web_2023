@@ -1,9 +1,9 @@
 <script setup>
 import { onMounted } from "vue";
-
 // example components
 import DefaultNavbar from "@/examples/navbars/NavbarDefault.vue";
 import Header from "@/examples/Header.vue";
+import MaterialBadge from "@/components/MaterialBadge.vue";
 
 //Vue Material Kit 2 components
 import MaterialInput from "@/components/MaterialInput.vue";
@@ -15,6 +15,32 @@ import setMaterialInput from "@/assets/js/material-input";
 onMounted(() => {
   setMaterialInput();
 });
+</script>
+<script>
+export default {
+  data() {
+    return {
+      usuario: '',
+      password: '',
+      mostrarDiv: false
+    };
+  },
+  methods: {
+    acceder() {
+      console.log("usuario: "+this.usuario)
+      console.log("contra: "+this.password)
+      if(this.usuario=="admin"){
+        this.$router.push('/');
+        console.log("usuario admin aceptado")
+      }
+      else{
+        this.mostrarDiv=!this.mostrarDiv;
+        console.log("usuario no aceptado")
+      }
+
+    }
+  }
+}
 </script>
 <template>
   <Header>
@@ -35,7 +61,7 @@ onMounted(() => {
                 class="card-header p-0 position-relative mt-n4 mx-3 z-index-2"
               >
                 <div
-                  class="bg-gradient-secondary shadow-success border-radius-lg py-3 pe-1 "
+                  class="bg-gradient-dark shadow-success border-radius-lg py-3 pe-1 "
                 >
                   <h4
                     class="text-white font-weight-bolder text-center mt-2 mb-0"
@@ -62,19 +88,44 @@ onMounted(() => {
                 </div>
               </div>
               <div class="card-body">
-                <form role="form" class="text-start">
-                  <MaterialInput
-                    id="email"
+                  <!--<MaterialInput 
+                    id="usuario"
                     class="input-group-outline my-3"
                     :label="{ text: 'usuario', class: 'form-label' }"
                     type="email"
-                  />
-                  <MaterialInput
+                    v-model="usuario"
+                    <MaterialInput
                     id="password"
                     class="input-group-outline mb-3"
                     :label="{ text: 'contraseña', class: 'form-label' }"
                     type="password"
+                    v-model="password"
                   />
+                  />
+                    -->
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-outline mb-2">
+                            <label class="form-label">usuario</label>
+                            <input class="form-control" 
+                            v-model="usuario"
+                            type="text" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-outline mb-2">
+                            <label class="form-label">contraseña</label>
+                            <input class="form-control" 
+                              v-model="password"
+                              type="password" 
+                              >
+                          </div>
+                        </div>
+                      </div>
+
                   <MaterialSwitch
                     class="d-flex align-items-center mb-3"
                     id="rememberMe"
@@ -83,24 +134,32 @@ onMounted(() => {
                     >recordarme</MaterialSwitch
                   >
 
+                  <div class="text-center" v-show="mostrarDiv">
+                    <MaterialBadge size="sm" variant="gradient" color="danger">
+                      Usuario o contraseña incorrectos
+                    </MaterialBadge>
+                  </div>
+
                   <div class="text-center">
                     <MaterialButton
                       class="my-4 mb-2"
                       variant="gradient"
-                      color="secondary"
+                      color="dark"
                       fullWidth
+                      @click="acceder()"
                       >Iniciar sesión</MaterialButton
                     >
                   </div>
+
                   <p class="mt-4 text-sm text-center">
                     ¿No tienes una cuenta?
                     <a
-                      href="#"
+                      href="http://localhost:3000"
                       class="text-success text-gradient font-weight-bold"
                       >Registrate</a
                     >
                   </p>
-                </form>
+
               </div>
             </div>
           </div>

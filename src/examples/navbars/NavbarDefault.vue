@@ -120,8 +120,40 @@ watch(
         title="Designed and Coded by Creative Tim"
         data-placement="bottom"
       >
-        Material Kit 2
+        Inicio
       </RouterLink>
+
+      <RouterLink
+        class="navbar-brand d-none d-md-block"
+        :class="[
+          (props.transparent && textDark.value) || !props.transparent
+            ? 'text-dark font-weight-bolder ms-sm-3'
+            : 'text-white font-weight-bolder ms-sm-3'
+        ]"
+        :to="{ name: 'author' }"
+        rel="tooltip"
+        title="Designed and Coded by Creative Tim"
+        data-placement="bottom"
+      >
+        Contactos
+      </RouterLink>
+
+      <RouterLink
+        class="navbar-brand d-none d-md-block"
+        :class="[
+          (props.transparent && textDark.value) || !props.transparent
+            ? 'text-dark font-weight-bolder ms-sm-3'
+            : 'text-white font-weight-bolder ms-sm-3'
+        ]"
+        :to="{ name: 'page-features' }"
+        rel="tooltip"
+        title="Designed and Coded by Creative Tim"
+        data-placement="bottom"
+      >
+        usuarios
+      </RouterLink>
+
+
       <RouterLink
         class="navbar-brand d-block d-md-none"
         :class="
