@@ -1,5 +1,9 @@
 <script setup>
 defineProps({
+  model: {
+    type: String,
+    default: "",
+  },
   id: {
     type: String,
     default: "",
@@ -86,6 +90,7 @@ function getClasses(size, success, error) {
       :placeholder="placeholder"
       :isRequired="isRequired"
       :disabled="isDisabled"
+      :v-model="model"
     />
   </div>
 </template>

@@ -1,4 +1,4 @@
-<script setup>
+<script setup>nombre
 defineProps({
   headers: {
     type: Array,
@@ -8,8 +8,13 @@ defineProps({
     type: Array,
     required: true,
     image: String,
-    name: String,
-    email: String,
+    nombre: String,
+    apellido: String,
+    correo: String,
+    pais: String,
+    ciudad: String,
+    idioma: String,
+    observaciones: String,
     position: {
       type: Array,
       default: () => [],
@@ -49,8 +54,13 @@ defineProps({
                     v-for="(
                       {
                         image,
-                        name,
-                        email,
+                        nombre,
+                        correo,
+                        apellido,
+                        pais,
+                        ciudad,
+                        idioma,
+                        observaciones,
                         position: [label1, label2],
                         status,
                         date,
@@ -66,16 +76,16 @@ defineProps({
                           <img :src="image" class="avatar avatar-sm me-3" />
                         </div>
                         <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">{{ name }}</h6>
+                          <h6 class="mb-0 text-sm">{{ nombre }} {{ apellido }}</h6>
                           <p class="text-xs text-secondary mb-0">
-                            {{ email }}
+                            {{ correo }}
                           </p>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <p class="text-sm font-weight-bold mb-0">{{ label1 }}</p>
-                      <p class="text-sm text-secondary mb-0">{{ label2 }}</p>
+                      <p class="text-sm font-weight-bold mb-0">{{ pais }}</p>
+                      <p class="text-sm text-secondary mb-0">{{ ciudad }}</p>
                     </td>
                     <td class="align-middle text-center text-sm">
                       <span
@@ -86,7 +96,7 @@ defineProps({
                     </td>
                     <td class="align-middle text-center">
                       <span class="text-secondary text-sm font-weight-bold">{{
-                        date
+                        idioma
                       }}</span>
                     </td>
                     <td class="align-middle text-center">

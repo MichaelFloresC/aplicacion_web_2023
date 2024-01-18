@@ -154,7 +154,7 @@ export default {
                   <p class="mt-4 text-sm text-center">
                     ¿No tienes una cuenta?
                     <a
-                      href="http://localhost:3000"
+                      href="http://localhost:4000"
                       class="text-success text-gradient font-weight-bold"
                       >Registrate</a
                     >
