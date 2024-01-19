@@ -150,9 +150,23 @@ watch(
         title="Designed and Coded by Creative Tim"
         data-placement="bottom"
       >
-        usuarios
+        Usuarios
       </RouterLink>
 
+      <RouterLink
+        class="navbar-brand d-none d-md-block"
+        :class="[
+          (props.transparent && textDark.value) || !props.transparent
+            ? 'text-dark font-weight-bolder ms-sm-3'
+            : 'text-white font-weight-bolder ms-sm-3'
+        ]"
+        :to="{ name: 'page-headers' }"
+        rel="tooltip"
+        title="Designed and Coded by Creative Tim"
+        data-placement="bottom"
+      >
+        Destinos
+      </RouterLink>
 
       <RouterLink
         class="navbar-brand d-block d-md-none"

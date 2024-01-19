@@ -198,7 +198,7 @@ export default {
                     </MaterialButton>
                     <MaterialButton variant="contained" color="light" class="w-auto me-2 text-danger px-3 mb-0" v-on:click='deleteDog(usuario)'>
                         <i class="far fa-trash-alt me-2" aria-hidden="true"></i>
-                        Delete
+                        Borrar
                     </MaterialButton>
                     </td>
 

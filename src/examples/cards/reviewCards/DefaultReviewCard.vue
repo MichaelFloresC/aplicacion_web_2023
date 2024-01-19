@@ -137,7 +137,7 @@ const ratings = (rating) => {
 };
 </script>
 <template>
-  <div class="col-lg-4 col-md-8">
+  <div class="col-lg-10 col-md-12">
     <div :class="`card ${props.color ? props.color : 'card-plain'}`">
       <div class="card-body">
         <img

@@ -18,13 +18,11 @@ import DefaultReviewCard from "@/examples/cards/reviewCards/DefaultReviewCard.vu
       <div class="row mt-6">
         <DefaultReviewCard
           name="Nick Willever"
-          color="bg-gradient-success"
           date="Hace 1 día"
           review='Este es un producto excelente, tuve las mejores vacaciones'
-          :rating="5.0"
+          :rating="2.0"
         />
         <DefaultReviewCard
-          class="ms-md-auto"
           name="Shailesh Kushwaha"
           date="Hace 1 semana"
           review='Encontré excelentes lugares dentro de Arequipa.
