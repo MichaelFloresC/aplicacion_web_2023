@@ -19,6 +19,7 @@ export default {
   data() {
         return {    
           mostrarModal: false, 
+          textar:'',
           datoEditado :{},    
             dogs: [],
             newDog: {},
@@ -35,7 +36,7 @@ export default {
         addDog(e){
             e.preventDefault(); 
             var config_request={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'}
-            console.log(this.newDog);
+            console.log(this.textar);
             
             axios.post(this.backend_server + '/usuarios', this.newDog, { config_request })
             .then(res => {                                         
@@ -343,26 +344,17 @@ export default {
                       </div>
                     </div>
                     <div class="form-group mb-0 mt-md-0 mt-4">
-                      <MaterialTextArea
+                      <label>Otro Datos</label>
+                      <textarea
                         id="message"
-                        class="input-group-static mb-4"
+                        class="form-control"
                         :rows="2"
                         placeholder="Describe informacion adicional que no se haya registrado"
                         v-model="newDog.observaciones"
-                        >Otro Datos</MaterialTextArea
+                        ></textarea
                       >
                     </div>
-                    <!--
-                    <div class="row">
-                      <div class="col-md-12 text-center">
-                        <MaterialButton
-                          variant="gradient"
-                          color="success"
-                          class="mt-3 mb-0"
-                          >Send Message</MaterialButton
-                        >
-                      </div>
-                    </div>-->
+
                   </div>
                   <div class="modal-footer justify-content-center">
 
@@ -502,13 +494,14 @@ export default {
                       </div>
                     </div>
                     <div class="form-group mb-0 mt-md-0 mt-4">
-                      <MaterialTextArea
+                      <label>Otro Datos</label>
+                      <textarea
                         id="message"
-                        class="input-group-static mb-4"
+                        class="form-control"
                         :rows="2"
                         placeholder="Describe informacion adicional que no se haya registrado"
                         v-model="datoEditado.observaciones"
-                        >Otro Datos</MaterialTextArea
+                        ></textarea
                       >
                     </div>
                     <!--

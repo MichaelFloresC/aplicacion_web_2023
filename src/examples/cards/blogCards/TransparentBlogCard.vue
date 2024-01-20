@@ -18,9 +18,9 @@ defineProps({
     color: String,
     label: String,
     default: () => ({
-      route: "javascript:;",
+      route: "page-headers",
       color: "success",
-      label: "Read more",
+      label: "Mostrar mas",
     }),
   },
 });
@@ -47,7 +47,7 @@ defineProps({
         {{ description }}
       </p>
       <a
-        :href="action.route"
+        href="http://localhost:4000/sections/page-sections/page-headers"
         class="text-sm icon-move-right"
         :class="`text-${action.color}`"
         >{{ action.label }}

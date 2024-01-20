@@ -1,5 +1,9 @@
 <script setup>
 defineProps({
+  model: {
+    type: String,
+    default: "",
+  },
   id: {
     type: String,
     default: "message",
@@ -27,6 +31,7 @@ defineProps({
       :id="id"
       :placeholder="placeholder"
       :rows="rows"
+      :v-model="model"
     />
   </div>
 </template>
