@@ -18,6 +18,26 @@ const store = useAppStore();
 onMounted(() => {
   setTooltip(store.bootstrap);
 });
+
+</script>
+<script>
+import axios from "axios";
+export default {
+  data() {
+ 
+        return {    
+          datoEditado :{},        
+            dogs: [],
+            newDog: {},
+            backend_server: 'http://127.0.0.1:3000'
+        }
+    },
+    methods:{
+      fake(){
+  console.log("ingreso al metodo");
+}
+    }
+  }
 </script>
 <template>
   <section class="py-lg-5">
@@ -117,7 +137,7 @@ onMounted(() => {
                 </div>
               </div>
               <div class="col-lg-7">
-                <form class="p-3" id="contact-form" method="post">
+                <form id="contact-form" method="post" autocomplete="off" v-on:submit='fake()'>
                   <div class="card-header px-4 py-sm-5 py-3">
                     <h2>¡Di hola!</h2>
                     <p class="lead">Nos gustaría hablar con usted.</p>

@@ -133,7 +133,7 @@ export default {
           <p class="pe-5">
             {{ tour.detalle }}
           </p>
-          <a href="javascript:;" class="text-success icon-move-right"
+          <a href="http://localhost:4000/sections/input-areas/inputs" class="text-success icon-move-right"
             >Reserva Ahora
             <i class="fas fa-arrow-right text-sm ms-1"></i>
           </a>

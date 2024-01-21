@@ -20,38 +20,15 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="container position-sticky z-index-sticky top-0">
-    <div class="row">
-      <div class="col-12">
-        <DefaultNavbar
-          :sticky="true"
-          :action="{
-            route: 'https://www.creative-tim.com/product/vue-material-kit-pro',
-            color: 'bg-gradient-success',
-            label: 'Buy Now',
-          }"
-        />
-      </div>
-    </div>
-  </div>
-  <section>
-    <div class="page-header min-vh-100">
+  <div class="align-items-center " 
+  style="backgroundImage:url('https://perutherichestcountry.peru.travel/Contenido/Destino/Imagen/nl/154/1.1/Principal/shutterstock_306747452.jpg')"
+      loading="lazy">
+
       <div class="container">
         <div class="row">
+
           <div
-            class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column"
-          >
-            <div
-              class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center"
-              :style="{
-                backgroundImage: `url(${image})`,
-                backgroundSize: 'cover',
-              }"
-              loading="lazy"
-            ></div>
-          </div>
-          <div
-            class="mt-8 col-xl-5 col-lg-6 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5"
+            class="mt-12 col-xl-5 col-lg-6 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto "
           >
             <div
               class="card d-flex blur justify-content-center shadow-lg my-sm-0 my-sm-6 mt-8 mb-5"
@@ -62,62 +39,161 @@ onMounted(() => {
                 <div
                   class="bg-gradient-success shadow-success border-radius-lg p-3"
                 >
-                  <h3 class="text-white text-success mb-0">Contact us</h3>
+                  <h3 class="text-white text-success mb-0">REGISTRARSE</h3>
                 </div>
               </div>
               <div class="card-body">
                 <p class="pb-3">
-                  For further questions, including partnership opportunities,
-                  please email hello@creative-tim.com or contact using our
-                  contact form.
+                  Ingrese sus datos completos
                 </p>
-                <form id="contact-form" method="post" autocomplete="off">
-                  <div class="card-body p-0 my-3">
+                <form id="contact-form" method="post" autocomplete="off" v-on:submit='addDog'>
+                  <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
-                        <MaterialInput
-                          class="input-group-static mb-4"
-                          type="text"
-                          label="Full Name"
-                          placeholder="Full Name"
-                        />
+
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-static mb-4">
+                            <label>USUARIO</label>
+                            <input class="form-control" 
+                            type="text" 
+                            placeholder="-">
+                          </div>
+                        </div>
+                      </div>
+
+
                       </div>
                       <div class="col-md-6 ps-md-2">
-                        <MaterialInput
-                          class="input-group-static mb-4"
-                          type="email"
-                          label="Email"
-                          placeholder="hello@creative-tim.com"
-                        />
+
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-static mb-4">
+                            <label>CONTRASEÑA</label>
+                            <input class="form-control" 
+                            type="text" 
+                            placeholder="-">
+                          </div>
+                        </div>
+                      </div>
+                     
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-static mb-4">
+                            <label>Nombre</label>
+                            <input class="form-control" 
+                            type="text" 
+                            placeholder="-">
+                          </div>
+                        </div>
+                      </div>
+
+
+                      </div>
+                      <div class="col-md-6 ps-md-2">
+
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-static mb-4">
+                            <label>Apellido</label>
+                            <input class="form-control" 
+                            type="text" 
+                            placeholder="-">
+                          </div>
+                        </div>
+                      </div>
+                     
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-static mb-4">
+                            <label>Correo</label>
+                            <input class="form-control" 
+                            type="text" 
+                            placeholder="-">
+                          </div>
+                        </div>
+                      </div>
+                       
+                      </div>
+                      <div class="col-md-6 ps-md-2">
+
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-static mb-4">
+                            <label>Pais</label>
+                            <input class="form-control" 
+                            type="text" 
+                            placeholder="-">
+                          </div>
+                        </div>
+                      </div>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-static mb-4">
+                            <label>Ciudad</label>
+                            <input class="form-control" 
+                            type="text" 
+                            placeholder="-">
+                          </div>
+                        </div>
+                      </div>
+                       
+                      </div>
+                      <div class="col-md-6 ps-md-2">
+
+                      <div class="row justify-space-between py-2">
+                        <div class="col-lg-12 mx-auto">
+                          <div class="input-group input-group-static mb-4">
+                            <label>Idioma</label>
+                            <input class="form-control" 
+                            type="text" 
+                            placeholder="-">
+                          </div>
+                        </div>
+                      </div>
+
                       </div>
                     </div>
                     <div class="form-group mb-0 mt-md-0 mt-4">
-                      <MaterialTextArea
+                      <label>Otro Datos</label>
+                      <textarea
                         id="message"
-                        class="input-group-static mb-4"
-                        :rows="6"
-                        placeholder="Describe your problem in at least 250 characters"
-                        >How can we help you?</MaterialTextArea
+                        class="form-control"
+                        :rows="2"
+                        placeholder="Describe informacion adicional que no se haya registrado"
+                        ></textarea
                       >
                     </div>
-                    <div class="row">
-                      <div class="col-md-12 text-center">
-                        <MaterialButton
-                          variant="gradient"
-                          color="success"
-                          class="mt-3 mb-0"
-                          >Send Message</MaterialButton
-                        >
-                      </div>
-                    </div>
+
                   </div>
+                  <div class="modal-footer justify-content-center">
+
+                    <MaterialButton variant="gradient" color="success" class="mb-0"  data-bs-dismiss="modal">
+                      Guardar cambios
+                    </MaterialButton>
+                </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+</div>
   <DefaultFooter />
 </template>
