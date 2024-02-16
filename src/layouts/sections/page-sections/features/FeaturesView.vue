@@ -38,7 +38,7 @@ export default {
             var config_request={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'}
             console.log(this.textar);
             
-            axios.post(this.backend_server + '/usuarios', this.newDog, { config_request })
+            axios.post(this.backend_server + '/registrar_usuario', this.newDog, { config_request })
             .then(res => {                                         
                 this.dogs.push(this.newDog);
                 this.newDog = {};

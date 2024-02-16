@@ -52,7 +52,7 @@ export default {
         return {            
             dogs: [],
             newDog: {nombre:"Admin"},
-            backend_server: 'http://127.0.0.1:3000'
+            backend_server: 'http://127.0.0.1:8000/api'
         }
     },
     methods:{
