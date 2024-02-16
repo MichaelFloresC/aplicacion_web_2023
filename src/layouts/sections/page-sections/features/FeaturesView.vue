@@ -7,7 +7,7 @@ import MaterialInput from "@/components/MaterialInput.vue";
 import MaterialTextArea from "@/components/MaterialTextArea.vue";
 
 // images
-import team2 from "@/assets/img/team-2.jpg";
+import team2 from "@/assets/img/team-2.png";
 import team3 from "@/assets/img/team-3.jpg";
 import team4 from "@/assets/img/team-4.jpg";
 import image from "@/assets/img/nastuh.jpg";
@@ -23,7 +23,7 @@ export default {
           datoEditado :{},    
             dogs: [],
             newDog: {},
-            backend_server: 'http://127.0.0.1:3000'
+            backend_server: 'http://127.0.0.1:8000/api'
         }
     },
     methods:{
@@ -64,7 +64,7 @@ export default {
             var config_request={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'}
             var id =this.datoEditado._id;
             delete this.datoEditado._id;
-            axios.patch(this.backend_server + '/usuarios/' + id, this.datoEditado, { config_request })
+            axios.post(this.backend_server + '/editar_usuario', this.datoEditado, { config_request })
             .then(res => {                                         
                 this.dogs.splice(this.dogs.indexOf(this.datoEditado), 1,this.datoEditado);
                 this.datoEditado = {};
@@ -127,6 +127,9 @@ export default {
                 <thead>
                   <tr>
                     <th class="text-uppercase text-dark text-center font-weight-bolder opacity-10">
+                      
+                    </th>
+                    <th class="text-uppercase text-dark text-center font-weight-bolder opacity-10">
                       NOMBRES
                     </th>
                     <th class="text-uppercase text-dark text-center font-weight-bolder opacity-10">
@@ -147,15 +150,20 @@ export default {
                 <tbody>
                   <tr
                     v-for="usuario in dogs"
-                    :key="usuario._id"
+                    :key="usuario.id_usuario"
                   >
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div>
+                  <td>
+                    <div class="d-flex px-2 py-1">
+                      <div>
                           <img :src="team2" class="avatar avatar-sm me-3" />
                         </div>
+                    </div>
+                  </td>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+
                         <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">{{ usuario.nombre }} {{ usuario.apellido }}</h6>
+                          <h6 class="mb-0 text-sm">{{ usuario.nombre }} {{ usuario.app_paterno }} {{ usuario.app_materno }}</h6>
 
                         </div>
                       </div>
@@ -166,8 +174,8 @@ export default {
                       </p>
                     </td>
                     <td>
-                      <p class="text-sm font-weight-bold mb-0">{{ usuario.pais }}</p>
-                      <p class="text-sm text-secondary mb-0">{{ usuario.ciudad }}</p>
+                      <p class="text-sm font-weight-bold mb-0">{{ usuario.nacionalidad }}</p>
+                      <p class="text-sm text-secondary mb-0">{{  }}</p>
                     </td>
                     <!--<td class="align-middle text-center text-sm">
                       <span
@@ -418,10 +426,10 @@ export default {
                       <div class="row justify-space-between py-2">
                         <div class="col-lg-12 mx-auto">
                           <div class="input-group input-group-static mb-4">
-                            <label>Apellido</label>
+                            <label>Apellido Paterno</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="datoEditado.apellido"
+                            v-model='datoEditado.app_paterno'
                             placeholder="-">
                           </div>
                         </div>
@@ -435,10 +443,10 @@ export default {
                       <div class="row justify-space-between py-2">
                         <div class="col-lg-12 mx-auto">
                           <div class="input-group input-group-static mb-4">
-                            <label>Correo</label>
+                            <label>Apellido Materno</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="datoEditado.correo"
+                            v-model="datoEditado.app_materno"
                             placeholder="-">
                           </div>
                         </div>
@@ -450,10 +458,10 @@ export default {
                       <div class="row justify-space-between py-2">
                         <div class="col-lg-12 mx-auto">
                           <div class="input-group input-group-static mb-4">
-                            <label>Pais</label>
+                            <label>Correo</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="datoEditado.pais"
+                            v-model="datoEditado.correo"
                             placeholder="-">
                           </div>
                         </div>
@@ -467,10 +475,10 @@ export default {
                       <div class="row justify-space-between py-2">
                         <div class="col-lg-12 mx-auto">
                           <div class="input-group input-group-static mb-4">
-                            <label>Ciudad</label>
+                            <label>Pais</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="datoEditado.ciudad"
+                            v-model="datoEditado.nacionalidad"
                             placeholder="-">
                           </div>
                         </div>
@@ -500,7 +508,6 @@ export default {
                         class="form-control"
                         :rows="2"
                         placeholder="Describe informacion adicional que no se haya registrado"
-                        v-model="datoEditado.observaciones"
                         ></textarea
                       >
                     </div>
