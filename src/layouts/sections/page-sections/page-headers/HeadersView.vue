@@ -37,7 +37,7 @@ export default {
             e.preventDefault(); 
             var config_request={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'}
 
-            axios.post(this.backend_server + '/tours', this.newDog, { config_request })
+            axios.post(this.backend_server + '/registrar_tour', this.newDog, { config_request })
             .then(res => {                                         
                 this.dogs.push(this.newDog);
                 this.newDog = {};
@@ -125,11 +125,11 @@ export default {
       <div class="row align-items-center">
 
         <div class="col-lg-4 mt-lg-0 mt-5 ps-lg-0 ps-0">
-          <img class="w-100 border-radius-md shadow-lg" :src=tour.url_image alt="Emma Roberts">
+          <img class="w-100 border-radius-md shadow-lg" :src=tour.foto alt="Emma Roberts">
         </div>
 
         <div class="col-lg-6 my-auto">
-          <h3>{{ tour.nombre_completo}}</h3>
+          <h3>{{ tour.nombre_destino}}</h3>
           <p class="pe-5">
             {{ tour.detalle }}
           </p>
@@ -194,7 +194,7 @@ export default {
                             <label>Nombre completo del destino</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="newDog.nombre_completo"
+                            v-model="newDog.nombre_destino"
                             >
                           </div>
                         </div>
@@ -227,7 +227,7 @@ export default {
                             <label>URL Imagen</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="newDog.url_image"
+                            v-model="newDog.foto"
                             >
                           </div>
                         </div>

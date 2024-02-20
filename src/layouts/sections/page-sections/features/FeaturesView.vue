@@ -51,7 +51,7 @@ export default {
         deleteDog(dog){
             var config_request={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'}
 
-            axios.delete(this.backend_server + '/usuarios/' + dog._id, {}, { config_request })
+            axios.delete(this.backend_server + '/delete_usuario/' + dog.id_usuario, {}, { config_request })
             .then(res => {                                         
                 this.dogs.splice(this.dogs.indexOf(dog), 1);
             })
@@ -276,10 +276,10 @@ export default {
                       <div class="row justify-space-between py-2">
                         <div class="col-lg-12 mx-auto">
                           <div class="input-group input-group-static mb-4">
-                            <label>Apellido</label>
+                            <label>Apellido Paterno</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="newDog.apellido"
+                            v-model="newDog.app_paterno"
                             placeholder="-">
                           </div>
                         </div>
@@ -293,10 +293,10 @@ export default {
                       <div class="row justify-space-between py-2">
                         <div class="col-lg-12 mx-auto">
                           <div class="input-group input-group-static mb-4">
-                            <label>Correo</label>
+                            <label>Apeliido Materno</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="newDog.correo"
+                            v-model="newDog.app_materno"
                             placeholder="-">
                           </div>
                         </div>
@@ -308,10 +308,10 @@ export default {
                       <div class="row justify-space-between py-2">
                         <div class="col-lg-12 mx-auto">
                           <div class="input-group input-group-static mb-4">
-                            <label>Pais</label>
+                            <label>Correo</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="newDog.pais"
+                            v-model="newDog.correo"
                             placeholder="-">
                           </div>
                         </div>
@@ -325,10 +325,10 @@ export default {
                       <div class="row justify-space-between py-2">
                         <div class="col-lg-12 mx-auto">
                           <div class="input-group input-group-static mb-4">
-                            <label>Ciudad</label>
+                            <label>Nacionalidad</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="newDog.ciudad"
+                            v-model="newDog.nacionalidad"
                             placeholder="-">
                           </div>
                         </div>
@@ -508,6 +508,7 @@ export default {
                         class="form-control"
                         :rows="2"
                         placeholder="Describe informacion adicional que no se haya registrado"
+                        v-model="datoEditado.observaciones"
                         ></textarea
                       >
                     </div>
