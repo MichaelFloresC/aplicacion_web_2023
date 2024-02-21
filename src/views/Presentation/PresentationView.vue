@@ -51,7 +51,7 @@ export default {
  
         return {            
             dogs: [],
-            newDog: {nombre:"Admin"},
+            newDog: {nombre:"Administrador"},
             backend_server: 'http://127.0.0.1:8000/api'
         }
     },
@@ -60,9 +60,10 @@ export default {
             e.preventDefault(); 
             var config_request={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'}
 
-            axios.post(this.backend_server + '/comentarios', this.newDog, { config_request })
+            axios.post(this.backend_server + '/registrar_comentario', this.newDog, { config_request })
             .then(res => {                                         
                 this.dogs.push(this.newDog);
+                console.log(this.newDog);
                 this.newDog = {};
             })
             .catch((error) => {
@@ -73,7 +74,7 @@ export default {
         deleteDog(dog){
             var config_request={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'}
 
-            axios.delete(this.backend_server + '/comentarios/' + dog._id, {}, { config_request })
+            axios.delete(this.backend_server + '/delete_comentario/' + dog.id_comentario, {}, { config_request })
             .then(res => {                                         
                 this.dogs.splice(this.dogs.indexOf(dog), 1);
             })
@@ -155,7 +156,7 @@ export default {
                             <div class="input-group input-group-static">
                               <input class="form-control" 
                               type="text" 
-                              v-model="newDog.comentario"
+                              v-model="newDog.comentarios"
                               placeholder="Agrege aqui su comentario">
                             </div>
                           </div>
@@ -196,13 +197,13 @@ export default {
       
 
       <ul style="list-style: none;">
-        <li v-for="comment in dogs" :key="comment._id"   >
+        <li v-for="comment in dogs" :key="comment.id_comentario"   >
           <div class="row align-items-center">
             <div class="col-md-10">
               <DefaultReviewCard
                     :name="comment.nombre"
                     :date="comment.correo"
-                    :review="comment.comentario"
+                    :review="comment.comentarios"
                     :rating="comment.calificacion"
                     />
             </div>
