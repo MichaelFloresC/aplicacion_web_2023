@@ -50,7 +50,7 @@ export default {
         deleteDog(dog){
             var config_request={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'}
 
-            axios.delete(this.backend_server + '/tours/' + dog._id, {}, { config_request })
+            axios.delete(this.backend_server + '/delete_tour/' + dog.id_tour, {}, { config_request })
             .then(res => {                                         
                 this.dogs.splice(this.dogs.indexOf(dog), 1);
             })
@@ -63,7 +63,7 @@ export default {
             var config_request={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'}
             var id =this.datoEditado._id;
             delete this.datoEditado._id;
-            axios.patch(this.backend_server + '/tours/' + id, this.datoEditado, { config_request })
+            axios.post(this.backend_server + '/editar_tour', this.datoEditado, { config_request })
             .then(res => {                                         
                 this.dogs.splice(this.dogs.indexOf(this.datoEditado), 1,this.datoEditado);
                 this.datoEditado = {};
@@ -296,7 +296,7 @@ export default {
                             <label>Nombre completo del destino</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="datoEditado.nombre_completo"
+                            v-model="datoEditado.nombre_destino"
                             >
                           </div>
                         </div>
@@ -312,7 +312,7 @@ export default {
                             <label>codigo</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="datoEditado.nombre_corto"
+                            v-model="datoEditado.id_tour"
                             >
                           </div>
                         </div>
@@ -329,7 +329,7 @@ export default {
                             <label>URL Imagen</label>
                             <input class="form-control" 
                             type="text" 
-                            v-model="datoEditado.url_image"
+                            v-model="datoEditado.foto"
                             >
                           </div>
                         </div>
